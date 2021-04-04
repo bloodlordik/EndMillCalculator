@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <com.google.android.material.textview.MaterialTextView
+       android:id="@+id/eccentric_title"
+       style="@style/page_title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="@dimen/top_margin"
+       android:padding="4dp"
+       android:text="@string/eccentric_title"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+
+       tools:text="Eccentric contact grinding point" />
+
+   <EditText
+       android:id="@+id/helix_angel_input"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:autofillHints=""
+       android:ems="10"
+       android:gravity="center"
+       android:hint="@string/helix_input_hint"
+       android:inputType="numberDecimal"
+       app:layout_constraintEnd_toEndOf="@id/end_line"
+       app:layout_constraintStart_toStartOf="@id/start_line"
+       android:layout_marginTop="@dimen/top_margin"
+       app:layout_constraintTop_toBottomOf="@+id/eccentric_title" />
+
+   <EditText
+       android:id="@+id/helix_land_input"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="@dimen/top_margin"
+       android:autofillHints=""
+       android:ems="10"
+       android:gravity="center"
+       android:hint="@string/input_land"
+       android:inputType="numberDecimal"
+       app:layout_constraintEnd_toEndOf="@id/end_line"
+       app:layout_constraintStart_toStartOf="@id/start_line"
+       app:layout_constraintTop_toBottomOf="@id/helix_angel_input" />
+
+   <com.google.android.material.button.MaterialButton
+       android:id="@+id/eccentric_calculate"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+       android:padding="4dp"
+       android:text="@string/helix_calc_text"
+       app:layout_constraintEnd_toEndOf="@id/end_line"
+       app:layout_constraintStart_toStartOf="@id/start_line"
+       app:layout_constraintTop_toBottomOf="@id/helix_land_input" />
+
+   <androidx.constraintlayout.widget.Barrier
+       android:id="@+id/start_line"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:barrierDirection="left"
+       app:constraint_referenced_ids="eccentric_title"
+       tools:layout_editor_absoluteX="75dp" />
+
+   <androidx.constraintlayout.widget.Barrier
+       android:id="@+id/end_line"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:barrierDirection="right"
+       app:constraint_referenced_ids="eccentric_title"
+       tools:layout_editor_absoluteX="336dp" />
+   <androidx.appcompat.widget.AppCompatTextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:id="@+id/result"
+      tools:text="23,7"
+      app:layout_constraintStart_toStartOf="@id/start_line"
+      app:layout_constraintEnd_toEndOf="@id/end_line"
+      app:layout_constraintTop_toBottomOf="@id/eccentric_calculate"
+      android:layout_marginTop="24dp"
+      android:textColor="@color/black"
+      android:textSize="24sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

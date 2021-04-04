@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/naviagtor"
+    app:startDestination="@id/rootFragment">
+
+    <fragment
+        android:id="@+id/rootFragment"
+        android:name="com.example.endmillcalculator.fragments.RootFragment"
+        android:label="RootFragment" >
+        <action
+            android:id="@+id/action_rootFragment_to_backTaperFragment"
+            app:destination="@id/backTaperFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_rootFragment_to_eccentricFragment"
+            app:destination="@id/eccentricFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_rootFragment_to_helixFragment"
+            app:destination="@id/helixFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/backTaperFragment"
+        android:name="com.example.endmillcalculator.fragments.BackTaperFragment"
+        android:label="BackTaperFragment" />
+    <fragment
+        android:id="@+id/eccentricFragment"
+        android:name="com.example.endmillcalculator.fragments.EccentricFragment"
+        android:label="EccentricFragment" />
+    <fragment
+        android:id="@+id/helixFragment"
+        android:name="com.example.endmillcalculator.fragments.HelixFragment"
+        android:label="helix_fragment"
+        tools:layout="@layout/helix_fragment" />
+</navigation>
